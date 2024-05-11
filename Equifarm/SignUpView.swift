@@ -21,9 +21,10 @@ struct SignUpView: View {
     var body: some View {
         VStack {
             // Image at the top
-            Image("equity-bank-new-logo")
-            
-            Spacer() // Pushes the image to the top
+            Image("splashscreen")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding()
             
             Text("Sign Up")
                 .font(.title)
