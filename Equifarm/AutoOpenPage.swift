@@ -2,40 +2,39 @@ import SwiftUI
 
 struct AutoOpenPage: View {
     @State private var isLoginViewPresented = false
-    @State private var isSignUpViewPresented = false
+    @State private var isImageVisible = true
     
     var body: some View {
         VStack {
-            Spacer()
+          
             
-            Text("This page opens automatically after 2.5 seconds.")
-                .font(.subheadline)
-                .foregroundColor(.blue)
-            
-            Button(action: {
-                // Open the login view
-                isLoginViewPresented = true
-            }) {
-                Image("splashscreen2")
+            if isImageVisible {
+                Image("splashscreen")
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .edgesIgnoringSafeArea(.all)
+                    .aspectRatio(contentMode: .fit)
+                    
+                    .onAppear {
+                        // Hide the image after two seconds
+                        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+                            isImageVisible = false
+                            isLoginViewPresented = true
+                        }
+                    }
+            } else {
+                EmptyView()
             }
-            .padding()
             
-            Spacer()
+           
             
             Button(action: {
                 // Open the sign-up view
-                isSignUpViewPresented = true
+                isLoginViewPresented = true
             }) {
-                Text("Don't have a profile? Sign Up")
-                    .foregroundColor(.blue)
+               
             }
             .padding()
-            .sheet(isPresented: $isSignUpViewPresented) {
-                SignUpView()
+            .sheet(isPresented: $isLoginViewPresented) {
+                LoginView()
             }
         }
     }
