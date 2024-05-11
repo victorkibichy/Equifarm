@@ -11,6 +11,12 @@
 		054CA4772BEFB9F200F9BF0B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054CA4762BEFB9F200F9BF0B /* ContentView.swift */; };
 		054CA4792BEFB9F300F9BF0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 054CA4782BEFB9F300F9BF0B /* Assets.xcassets */; };
 		054CA47C2BEFB9F300F9BF0B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 054CA47B2BEFB9F300F9BF0B /* Preview Assets.xcassets */; };
+		0579B7802BEFC1610015D3C9 /* AutoOpenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579B77F2BEFC1610015D3C9 /* AutoOpenPage.swift */; };
+		0579B7822BEFC3DD0015D3C9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579B7812BEFC3DD0015D3C9 /* LoginView.swift */; };
+		0579B7842BEFC4EF0015D3C9 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579B7832BEFC4EF0015D3C9 /* SignUpView.swift */; };
+		0579B7862BEFC6D50015D3C9 /* ResetPasswordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579B7852BEFC6D50015D3C9 /* ResetPasswordPage.swift */; };
+		0579B7882BEFCB8B0015D3C9 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579B7872BEFCB8B0015D3C9 /* DashboardView.swift */; };
+		0579B78C2BEFD5E90015D3C9 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579B78B2BEFD5E90015D3C9 /* LogoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		054CA4762BEFB9F200F9BF0B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		054CA4782BEFB9F300F9BF0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		054CA47B2BEFB9F300F9BF0B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0579B77F2BEFC1610015D3C9 /* AutoOpenPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoOpenPage.swift; sourceTree = "<group>"; };
+		0579B7812BEFC3DD0015D3C9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		0579B7832BEFC4EF0015D3C9 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		0579B7852BEFC6D50015D3C9 /* ResetPasswordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPage.swift; sourceTree = "<group>"; };
+		0579B7872BEFCB8B0015D3C9 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		0579B78B2BEFD5E90015D3C9 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +65,12 @@
 			children = (
 				054CA4742BEFB9F200F9BF0B /* EquifarmApp.swift */,
 				054CA4762BEFB9F200F9BF0B /* ContentView.swift */,
+				0579B77F2BEFC1610015D3C9 /* AutoOpenPage.swift */,
+				0579B7812BEFC3DD0015D3C9 /* LoginView.swift */,
+				0579B7832BEFC4EF0015D3C9 /* SignUpView.swift */,
+				0579B7852BEFC6D50015D3C9 /* ResetPasswordPage.swift */,
+				0579B7872BEFCB8B0015D3C9 /* DashboardView.swift */,
+				0579B78B2BEFD5E90015D3C9 /* LogoutView.swift */,
 				054CA4782BEFB9F300F9BF0B /* Assets.xcassets */,
 				054CA47A2BEFB9F300F9BF0B /* Preview Content */,
 			);
@@ -137,7 +155,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0579B78C2BEFD5E90015D3C9 /* LogoutView.swift in Sources */,
 				054CA4772BEFB9F200F9BF0B /* ContentView.swift in Sources */,
+				0579B7842BEFC4EF0015D3C9 /* SignUpView.swift in Sources */,
+				0579B7802BEFC1610015D3C9 /* AutoOpenPage.swift in Sources */,
+				0579B7882BEFCB8B0015D3C9 /* DashboardView.swift in Sources */,
+				0579B7862BEFC6D50015D3C9 /* ResetPasswordPage.swift in Sources */,
+				0579B7822BEFC3DD0015D3C9 /* LoginView.swift in Sources */,
 				054CA4752BEFB9F200F9BF0B /* EquifarmApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
