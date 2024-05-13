@@ -1,10 +1,3 @@
-//
-//  SignUpView.swift
-//  Equifarm
-//
-//  Created by Bouncy Baby on 5/11/24.
-//
-
 import SwiftUI
 
 struct SignUpView: View {
@@ -20,12 +13,6 @@ struct SignUpView: View {
     
     var body: some View {
         VStack {
-            // Image at the top
-            Image("splashscreen")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .padding()
-            
             Text("Sign Up")
                 .font(.title)
                 .fontWeight(.bold)
@@ -74,53 +61,45 @@ struct SignUpView: View {
                 .cornerRadius(8)
                 .padding(.horizontal)
             
-        }
-        
-        Picker("Select Role", selection: $selectedRoleIndex) {
-            ForEach(0..<roles.count) { index in
-                Text(roles[index]).tag(index)
-                
-                    .pickerStyle(SegmentedPickerStyle())
-                    .padding()
-                
-                Button(action: {
-                    // Handle sign up button action
-                    // Here you can perform validation and send email confirmation
-                    
-                    // Example: Send email confirmation to the user's mailbox
-                    print("Sign Up button tapped")
-                    print("First Name: \(firstName)")
-                    print("Last Name: \(lastName)")
-                    print("National ID: \(nationalID)")
-                    print("Email: \(email)")
-                    print("Phone Number: \(phoneNumber)")
-                    print("Password: \(password)")
-                    print("Confirm Password: \(confirmPassword)")
-                    print("Selected Role: \(roles[selectedRoleIndex])")
-                }) {
-                    Text("Sign Up")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(8)
-                        .padding(.horizontal)
+            Picker(selection: $selectedRoleIndex, label: Text("Select Role")) {
+                ForEach(0..<roles.count) { index in
+                    Text(roles[index]).tag(index)
                 }
-                
-                Text("Please select Role") // Text view below Confirm Password field
-                    .foregroundColor(.red) // Change color to red or any desired color
-                    .padding(.top, 8) // Add some top padding
-                
-                Spacer() // Pushes everything up
             }
+            .pickerStyle(SegmentedPickerStyle())
             .padding()
+            
+            Button(action: {
+                // Handle sign up button action
+                // Here you can perform validation and send email confirmation
+                
+                // Example: Send email confirmation to the user's mailbox
+                print("Sign Up button tapped")
+                print("First Name: \(firstName)")
+                print("Last Name: \(lastName)")
+                print("National ID: \(nationalID)")
+                print("Email: \(email)")
+                print("Phone Number: \(phoneNumber)")
+                print("Password: \(password)")
+                print("Confirm Password: \(confirmPassword)")
+                print("Selected Role: \(roles[selectedRoleIndex])")
+            }) {
+                Text("Sign Up")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .cornerRadius(8)
+                    .padding(.horizontal)
+            }
         }
+        .padding()
     }
-    
-    struct SignUpView_Previews: PreviewProvider {
-        static var previews: some View {
-            SignUpView()
-        }
+}
+
+struct SignUpView_Previews: PreviewProvider {
+    static var previews: some View {
+        SignUpView()
     }
 }
