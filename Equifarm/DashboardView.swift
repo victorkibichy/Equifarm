@@ -83,7 +83,7 @@ enum MenuItem: String, CaseIterable {
     var destinationView: some View {
         switch self {
         case .home:
-            return AnyView(HomeView())
+            return AnyView(DashboardView())
         case .myAccount:
             return AnyView(MyAccountView())
         case .settings:
