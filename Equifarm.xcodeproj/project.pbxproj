@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		052B09062BF788D400DE6B28 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B09052BF788D400DE6B28 /* NetworkManager.swift */; };
 		054CA4752BEFB9F200F9BF0B /* EquifarmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054CA4742BEFB9F200F9BF0B /* EquifarmApp.swift */; };
 		054CA4772BEFB9F200F9BF0B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054CA4762BEFB9F200F9BF0B /* ContentView.swift */; };
 		054CA4792BEFB9F300F9BF0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 054CA4782BEFB9F300F9BF0B /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		052B09052BF788D400DE6B28 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		054CA4712BEFB9F200F9BF0B /* Equifarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Equifarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		054CA4742BEFB9F200F9BF0B /* EquifarmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquifarmApp.swift; sourceTree = "<group>"; };
 		054CA4762BEFB9F200F9BF0B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				0579B7852BEFC6D50015D3C9 /* ResetPasswordPage.swift */,
 				0579B7872BEFCB8B0015D3C9 /* DashboardView.swift */,
 				0579B78B2BEFD5E90015D3C9 /* LogoutView.swift */,
+				052B09052BF788D400DE6B28 /* NetworkManager.swift */,
 				054CA4782BEFB9F300F9BF0B /* Assets.xcassets */,
 				054CA47A2BEFB9F300F9BF0B /* Preview Content */,
 			);
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				052B09062BF788D400DE6B28 /* NetworkManager.swift in Sources */,
 				0579B78C2BEFD5E90015D3C9 /* LogoutView.swift in Sources */,
 				054CA4772BEFB9F200F9BF0B /* ContentView.swift in Sources */,
 				0579B7842BEFC4EF0015D3C9 /* SignUpView.swift in Sources */,

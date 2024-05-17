@@ -12,89 +12,72 @@ struct SignUpView: View {
     let roles = ["Farmer", "Agrodealer", "Buyer", "Service Provider", "Transporter"]
     
     var body: some View {
-        VStack {
-            Text("Sign Up")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.blue)
-            
-            TextField("First Name", text: $firstName)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-                .padding(.horizontal)
-            
-            TextField("Last Name", text: $lastName)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-                .padding(.horizontal)
-            
-            TextField("National ID", text: $nationalID)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-                .padding(.horizontal)
-            
-            TextField("Email", text: $email)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-                .padding(.horizontal)
-            
-            TextField("Phone Number", text: $phoneNumber)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-                .padding(.horizontal)
-                .keyboardType(.phonePad) // Set keyboard type to phone pad
-            
-            SecureField("Password", text: $password)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-                .padding(.horizontal)
-            
-            SecureField("Confirm Password", text: $confirmPassword)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-                .padding(.horizontal)
-            
-            Picker(selection: $selectedRoleIndex, label: Text("Select Role")) {
-                ForEach(0..<roles.count) { index in
-                    Text(roles[index]).tag(index)
-                }
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding()
-            
-            Button(action: {
-                // Handle sign up button action
-                // Here you can perform validation and send email confirmation
-                
-                // Example: Send email confirmation to the user's mailbox
-                print("Sign Up button tapped")
-                print("First Name: \(firstName)")
-                print("Last Name: \(lastName)")
-                print("National ID: \(nationalID)")
-                print("Email: \(email)")
-                print("Phone Number: \(phoneNumber)")
-                print("Password: \(password)")
-                print("Confirm Password: \(confirmPassword)")
-                print("Selected Role: \(roles[selectedRoleIndex])")
-            }) {
-                Text("Sign Up")
-                    .font(.headline)
-                    .foregroundColor(.white)
+        ScrollView {
+            VStack {
+                // Image at the top
+                Image("splashscreen")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
                     .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .cornerRadius(8)
-                    .padding(.horizontal)
+                
+                Text("Sign Up")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.blue)
+                
+                Group {
+                    TextField("First Name", text: $firstName)
+                    TextField("Last Name", text: $lastName)
+                    TextField("National ID", text: $nationalID)
+                    TextField("Email", text: $email)
+                    TextField("Phone Number", text: $phoneNumber)
+                        .keyboardType(.phonePad)
+                    SecureField("Password", text: $password)
+                    SecureField("Confirm Password", text: $confirmPassword)
+                }
+                .padding()
+                .background(Color.gray.opacity(0.2))
+                .cornerRadius(8)
+                .padding(.horizontal)
+                
+                Picker("Select Role", selection: $selectedRoleIndex) {
+                    ForEach(0..<roles.count) { index in
+                        Text(roles[index]).tag(index)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                
+                Button(action: {
+                    NetworkManager.shared.signUp(firstName: firstName, lastName: lastName, nationalID: nationalID, email: email, phoneNumber: phoneNumber, password: password, role: roles[selectedRoleIndex]) { result in
+                        switch result {
+                        case .success(let response):
+                            print("Sign Up successful: \(response)")
+                            // Handle successful sign-up (e.g., navigate to a different view)
+                        case .failure(let error):
+                            print("Sign Up failed: \(error.localizedDescription)")
+                            // Handle error (e.g., show an alert)
+                        }
+                    }
+                }) {
+                    Text("Sign Up")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                        .padding(.horizontal)
+                }
+                
+                Text("Please select Role") // Text view below Confirm Password field
+                    .foregroundColor(.red) // Change color to red or any desired color
+                    .padding(.top, 8) // Add some top padding
+                
+                Spacer() // Pushes everything up
             }
+            .padding()
         }
-        .padding()
     }
 }
 
