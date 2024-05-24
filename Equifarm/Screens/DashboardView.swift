@@ -5,12 +5,15 @@ struct DashboardView: View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: Array(repeating: GridItem(), count: 3), spacing: 20) {
-                    ForEach(0..<9) { index in
-                        CardView(title: cardTitles[index], imageName: imageNames[index])
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .background(Color("equifarm"))
-                            .cornerRadius(10)
-                            .shadow(radius: 5)
+                    ForEach(0..<cardTitles.count) { index in
+                        let title = cardTitles[index]
+                        let imageName = imageNames[index]
+                        
+                        if title == "My farm" {
+                            CardView(title: title, imageName: imageName, destination: MyFarmView())
+                        } else {
+                            CardView(title: title, imageName: imageName, destination: Text("\(title) View"))
+                        }
                     }
                 }
                 .padding(20)
@@ -27,26 +30,33 @@ struct DashboardView: View {
     let cardTitles = ["My farm", "Farm inputs", "Produce", "Farm Tech", "Services", "Training", "Transportation", "Insurance", "Support"]
     let imageNames = ["myfarm", "farminputs", "produce", "farmtech", "services", "training", "transport", "insurance", "support"]
 }
-
-struct CardView: View {
+struct CardView<Destination: View>: View {
     var title: String
     var imageName: String
-    
+    var destination: Destination
+
     var body: some View {
-        VStack {
-            Image(imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .padding(10)
-            
-            Text(title)
-                .foregroundColor(.black)
-                .font(.headline)
-                .padding()
-                .fontWeight(.semibold)
+        NavigationLink(destination: destination) {
+            VStack {
+                Image(imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(10)
+
+                Text(title)
+                    .foregroundColor(.black)
+                    .font(.headline)
+                    .padding()
+                    .fontWeight(.semibold)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("equifarm"))
+            .cornerRadius(10)
+            .shadow(radius: 5)
         }
     }
 }
+
 
 struct DrawerMenuButton: View {
     var body: some View {
@@ -94,7 +104,11 @@ enum MenuItem: String, CaseIterable {
     }
 }
 
-
+struct MyFarmView: View {
+    var body: some View {
+        Text("My Farm View")
+    }
+}
 
 struct HomeView: View {
     var body: some View {

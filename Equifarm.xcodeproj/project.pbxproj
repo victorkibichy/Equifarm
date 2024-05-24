@@ -18,8 +18,14 @@
 		0579B7862BEFC6D50015D3C9 /* ResetPasswordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579B7852BEFC6D50015D3C9 /* ResetPasswordPage.swift */; };
 		0579B7882BEFCB8B0015D3C9 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579B7872BEFCB8B0015D3C9 /* DashboardView.swift */; };
 		0579B78C2BEFD5E90015D3C9 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579B78B2BEFD5E90015D3C9 /* LogoutView.swift */; };
-		05BB78E92C0074AB00083550 /* MyFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78E82C0074AB00083550 /* MyFarm.swift */; };
-		05BB78EB2C0074C600083550 /* FarmInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78EA2C0074C600083550 /* FarmInputs.swift */; };
+		05BB78E92C0074AB00083550 /* MyFarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78E82C0074AB00083550 /* MyFarmView.swift */; };
+		05BB78EB2C0074C600083550 /* FarmInputsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78EA2C0074C600083550 /* FarmInputsView.swift */; };
+		05BB78ED2C00751100083550 /* ProduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78EC2C00751100083550 /* ProduceView.swift */; };
+		05BB78EF2C007A2300083550 /* SupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78EE2C007A2300083550 /* SupportView.swift */; };
+		05BB78F12C007A4300083550 /* FarmTechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78F02C007A4300083550 /* FarmTechView.swift */; };
+		05BB78F32C007A5A00083550 /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78F22C007A5900083550 /* ServicesView.swift */; };
+		05BB78F62C00801400083550 /* TrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78F52C00801400083550 /* TrainingView.swift */; };
+		05BB78F82C00803000083550 /* TransportationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78F72C00803000083550 /* TransportationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +41,14 @@
 		0579B7852BEFC6D50015D3C9 /* ResetPasswordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPage.swift; sourceTree = "<group>"; };
 		0579B7872BEFCB8B0015D3C9 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		0579B78B2BEFD5E90015D3C9 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
-		05BB78E82C0074AB00083550 /* MyFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFarm.swift; sourceTree = "<group>"; };
-		05BB78EA2C0074C600083550 /* FarmInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmInputs.swift; sourceTree = "<group>"; };
+		05BB78E82C0074AB00083550 /* MyFarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFarmView.swift; sourceTree = "<group>"; };
+		05BB78EA2C0074C600083550 /* FarmInputsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmInputsView.swift; sourceTree = "<group>"; };
+		05BB78EC2C00751100083550 /* ProduceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProduceView.swift; sourceTree = "<group>"; };
+		05BB78EE2C007A2300083550 /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
+		05BB78F02C007A4300083550 /* FarmTechView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmTechView.swift; sourceTree = "<group>"; };
+		05BB78F22C007A5900083550 /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
+		05BB78F52C00801400083550 /* TrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingView.swift; sourceTree = "<group>"; };
+		05BB78F72C00803000083550 /* TransportationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +69,10 @@
 				0579B77F2BEFC1610015D3C9 /* AutoOpenPage.swift */,
 				0579B7852BEFC6D50015D3C9 /* ResetPasswordPage.swift */,
 				0579B7832BEFC4EF0015D3C9 /* SignUpView.swift */,
-				0579B7872BEFCB8B0015D3C9 /* DashboardView.swift */,
 				0579B78B2BEFD5E90015D3C9 /* LogoutView.swift */,
 				054CA4762BEFB9F200F9BF0B /* ContentView.swift */,
-				05BB78E82C0074AB00083550 /* MyFarm.swift */,
-				05BB78EA2C0074C600083550 /* FarmInputs.swift */,
+				0579B7872BEFCB8B0015D3C9 /* DashboardView.swift */,
+				05BB78F42C007A9300083550 /* Dashboard Destinations */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -116,6 +127,21 @@
 				054CA47B2BEFB9F300F9BF0B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		05BB78F42C007A9300083550 /* Dashboard Destinations */ = {
+			isa = PBXGroup;
+			children = (
+				05BB78E82C0074AB00083550 /* MyFarmView.swift */,
+				05BB78EC2C00751100083550 /* ProduceView.swift */,
+				05BB78F22C007A5900083550 /* ServicesView.swift */,
+				05BB78EE2C007A2300083550 /* SupportView.swift */,
+				05BB78F02C007A4300083550 /* FarmTechView.swift */,
+				05BB78EA2C0074C600083550 /* FarmInputsView.swift */,
+				05BB78F52C00801400083550 /* TrainingView.swift */,
+				05BB78F72C00803000083550 /* TransportationView.swift */,
+			);
+			path = "Dashboard Destinations";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,16 +214,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05BB78F12C007A4300083550 /* FarmTechView.swift in Sources */,
 				052B09062BF788D400DE6B28 /* NetworkManager.swift in Sources */,
 				0579B78C2BEFD5E90015D3C9 /* LogoutView.swift in Sources */,
+				05BB78ED2C00751100083550 /* ProduceView.swift in Sources */,
+				05BB78F62C00801400083550 /* TrainingView.swift in Sources */,
 				054CA4772BEFB9F200F9BF0B /* ContentView.swift in Sources */,
-				05BB78E92C0074AB00083550 /* MyFarm.swift in Sources */,
+				05BB78F32C007A5A00083550 /* ServicesView.swift in Sources */,
+				05BB78E92C0074AB00083550 /* MyFarmView.swift in Sources */,
+				05BB78EF2C007A2300083550 /* SupportView.swift in Sources */,
 				0579B7842BEFC4EF0015D3C9 /* SignUpView.swift in Sources */,
 				0579B7802BEFC1610015D3C9 /* AutoOpenPage.swift in Sources */,
+				05BB78F82C00803000083550 /* TransportationView.swift in Sources */,
 				0579B7882BEFCB8B0015D3C9 /* DashboardView.swift in Sources */,
 				0579B7862BEFC6D50015D3C9 /* ResetPasswordPage.swift in Sources */,
 				0579B7822BEFC3DD0015D3C9 /* LoginView.swift in Sources */,
-				05BB78EB2C0074C600083550 /* FarmInputs.swift in Sources */,
+				05BB78EB2C0074C600083550 /* FarmInputsView.swift in Sources */,
 				054CA4752BEFB9F200F9BF0B /* EquifarmApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
