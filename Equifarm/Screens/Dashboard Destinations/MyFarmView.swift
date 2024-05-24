@@ -14,7 +14,7 @@ struct MyFarmView: View {
                 Text("Your Farm")
                     .font(.title)
                     .fontWeight(.bold)
-                    .foregroundColor(.white)
+                    .foregroundColor(.red)
                     .padding()
                 Spacer()
             }
