@@ -9,8 +9,11 @@ struct DashboardView: View {
                         let title = cardTitles[index]
                         let imageName = imageNames[index]
                         
+                        // Conditionally create NavigationLink based on the card title
                         if title == "My farm" {
                             CardView(title: title, imageName: imageName, destination: MyFarmView())
+                        } else if title == "Produce" {
+                            CardView(title: title, imageName: imageName, destination: ProduceView())
                         } else {
                             CardView(title: title, imageName: imageName, destination: Text("\(title) View"))
                         }
@@ -27,9 +30,10 @@ struct DashboardView: View {
         }
     }
     
-    let cardTitles = ["My farm", "Farm inputs", "Produce", "Farm Tech", "Services", "Training", "Transportation", "Insurance", "Support"]
+    let cardTitles = ["My farm", "Farm inputs", "Produce", "Farm Tech", "Services", "Training", "Transport", "Insurance", "Support"]
     let imageNames = ["myfarm", "farminputs", "produce", "farmtech", "services", "training", "transport", "insurance", "support"]
 }
+
 struct CardView<Destination: View>: View {
     var title: String
     var imageName: String
