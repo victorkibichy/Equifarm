@@ -104,11 +104,7 @@ enum MenuItem: String, CaseIterable {
     }
 }
 
-struct MyFarmView: View {
-    var body: some View {
-        Text("My Farm View")
-    }
-}
+
 
 struct HomeView: View {
     var body: some View {
