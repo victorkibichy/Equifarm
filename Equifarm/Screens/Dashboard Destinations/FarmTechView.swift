@@ -50,13 +50,14 @@ struct FarmTechView: View {
                 ScrollView {
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
                         ForEach(0..<6) { index in
-                            ItemView()
+                            SellItemView()
                         }
                     }
                     .padding()
                 }
             }
             .navigationTitle("Farm Tech")
+            .background(Color.mint)
         }
     }
 }
@@ -66,7 +67,7 @@ struct SellItemView: View {
         VStack {
             Image(systemName: "photo") // Placeholder for tractor image
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: .fit)
                 .frame(height: 150)
                 .clipped()
                 Spacer()

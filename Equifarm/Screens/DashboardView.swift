@@ -14,7 +14,13 @@ struct DashboardView: View {
                             CardView(title: title, imageName: imageName, destination: MyFarmView())
                         } else if title == "Produce" {
                             CardView(title: title, imageName: imageName, destination: ProduceView())
-                        } else {
+                        }
+                            else if title == "Farm Tech" {
+                                CardView(title: title, imageName: imageName, destination: FarmTechView())
+                        }
+                        else if title == "Farm inputs" {
+                            CardView(title: title, imageName: imageName, destination: FarmInputsView())
+                    }else {
                             CardView(title: title, imageName: imageName, destination: Text("\(title) View"))
                         }
                     }

@@ -6,14 +6,6 @@
 //
 
 import Foundation
-//
-//  Produce.swift
-//  Equifarm
-//
-//  Created by  Bouncy Baby on 5/24/24.
-//
-
-import Foundation
 import SwiftUI
 
 struct ProduceView: View {
@@ -25,9 +17,9 @@ struct ProduceView: View {
                     Button(action: {
                         // Action for Machineries tab
                     }) {
-                        Text("Machineries")
+                        Text("Upload Produce")
                             .padding()
-                            .background(Color.red)
+                            .background(Color.blue)
                             .foregroundColor(.white)
                             .cornerRadius(8)
                     }
@@ -37,9 +29,9 @@ struct ProduceView: View {
                     Button(action: {
                         // Action for Tools tab
                     }) {
-                        Text("Tools")
+                        Text("Manage Produce")
                             .padding()
-                            .background(Color.gray)
+                            .background(Color.pink)
                             .foregroundColor(.white)
                             .cornerRadius(8)
                     }
@@ -50,28 +42,30 @@ struct ProduceView: View {
                 ScrollView {
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
                         ForEach(0..<6) { index in
-                            ItemView()
+                           ProducesView()
                         }
                     }
                     .padding()
                 }
             }
             .navigationTitle("My Produce")
+            .background(Color.mint)
         }
+        
     }
 }
 
-struct ItemView: View {
+struct ProducesView: View {
     var body: some View {
         VStack {
             Image(systemName: "photo") // Placeholder for tractor image
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: .fit)
                 .frame(height: 150)
                 .clipped()
                 Spacer()
            
-            Text("Tractor")
+            Text("Eggs Tray")
                 .font(.headline)
            
             Text("Seller: four farmers ltd")
