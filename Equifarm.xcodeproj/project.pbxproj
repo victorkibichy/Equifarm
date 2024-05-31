@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		052B09062BF788D400DE6B28 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B09052BF788D400DE6B28 /* NetworkManager.swift */; };
+		053A31A32C070D3A005238F0 /* FarmerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A31A22C070D3A005238F0 /* FarmerViewModel.swift */; };
+		053A31A52C072A60005238F0 /* Farmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A31A42C072A60005238F0 /* Farmer.swift */; };
 		054CA4752BEFB9F200F9BF0B /* EquifarmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054CA4742BEFB9F200F9BF0B /* EquifarmApp.swift */; };
 		054CA4772BEFB9F200F9BF0B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054CA4762BEFB9F200F9BF0B /* ContentView.swift */; };
 		054CA4792BEFB9F300F9BF0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 054CA4782BEFB9F300F9BF0B /* Assets.xcassets */; };
@@ -32,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		052B09052BF788D400DE6B28 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		053A31A22C070D3A005238F0 /* FarmerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmerViewModel.swift; sourceTree = "<group>"; };
+		053A31A42C072A60005238F0 /* Farmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Farmer.swift; sourceTree = "<group>"; };
 		054CA4712BEFB9F200F9BF0B /* Equifarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Equifarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		054CA4742BEFB9F200F9BF0B /* EquifarmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquifarmApp.swift; sourceTree = "<group>"; };
 		054CA4762BEFB9F200F9BF0B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +103,15 @@
 			path = "App Module";
 			sourceTree = "<group>";
 		};
+		053A31A12C070CF1005238F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				053A31A22C070D3A005238F0 /* FarmerViewModel.swift */,
+				053A31A42C072A60005238F0 /* Farmer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		054CA4682BEFB9F200F9BF0B = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +135,7 @@
 				050C423B2C006ED90026ADCE /* App Module */,
 				050C423A2C006E630026ADCE /* Managers */,
 				050C42392C006DD80026ADCE /* Screens */,
+				053A31A12C070CF1005238F0 /* Models */,
 				054CA47A2BEFB9F300F9BF0B /* Preview Content */,
 			);
 			path = Equifarm;
@@ -238,9 +252,11 @@
 				05BB78E92C0074AB00083550 /* MyFarmView.swift in Sources */,
 				05BB78FA2C008DFB00083550 /* LocationManager.swift in Sources */,
 				05BB78EF2C007A2300083550 /* SupportView.swift in Sources */,
+				053A31A52C072A60005238F0 /* Farmer.swift in Sources */,
 				0579B7842BEFC4EF0015D3C9 /* SignUpView.swift in Sources */,
 				0579B7802BEFC1610015D3C9 /* AutoOpenPage.swift in Sources */,
 				05BB78F82C00803000083550 /* TransportationView.swift in Sources */,
+				053A31A32C070D3A005238F0 /* FarmerViewModel.swift in Sources */,
 				0579B7882BEFCB8B0015D3C9 /* DashboardView.swift in Sources */,
 				0579B7862BEFC6D50015D3C9 /* ResetPasswordPage.swift in Sources */,
 				05BB78FD2C008F5D00083550 /* MapView.swift in Sources */,

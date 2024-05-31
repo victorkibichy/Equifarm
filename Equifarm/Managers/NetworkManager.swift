@@ -9,7 +9,7 @@ class NetworkManager {
 extension NetworkManager {
     func signUp(firstName: String, lastName: String, nationalID: String, email: String, phoneNumber: String, password: String, role: String, completion: @escaping (Result<String, Error>) -> Void) {
         // Ensure the URL is valid
-        guard let url = URL(string: "http://52.15.152.26:8082/api/v1/signup") else {  // Assuming the endpoint is /signup
+        guard let url = URL(string: "http://52.15.152.26:8082/api/v1/") else {  // Assuming the endpoint is /signup
             completion(.failure(NSError(domain: "Invalid URL", code: 1001, userInfo: nil)))
             return
         }
@@ -20,7 +20,7 @@ extension NetworkManager {
         
         // Set request headers
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("YOUR_API_KEY", forHTTPHeaderField: "Authorization")
+        request.setValue("auth/register", forHTTPHeaderField: "Authorization")
         
         // Prepare the request body with the user details
         let body: [String: Any] = [

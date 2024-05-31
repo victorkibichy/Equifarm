@@ -3,7 +3,7 @@ import MapKit
 
 struct MyFarmView: View {
     @StateObject private var locationManager = LocationManager()
-
+    @State private var showFarmText = true
     var body: some View {
         ZStack {
             MapView(userLocation: $locationManager.location)
@@ -11,11 +11,20 @@ struct MyFarmView: View {
             
             VStack {
                 Spacer()
-                Text("Your Farm")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.red)
-                    .padding()
+                if showFarmText {
+                    Text("Your Farm Location")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.red)
+                        .padding()
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                withAnimation {
+                                    showFarmText = false
+                                }
+                            }
+                        }
+                }
                 Spacer()
             }
         }
