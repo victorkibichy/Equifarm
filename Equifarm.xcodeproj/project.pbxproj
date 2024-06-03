@@ -20,6 +20,7 @@
 		0579B7862BEFC6D50015D3C9 /* ResetPasswordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579B7852BEFC6D50015D3C9 /* ResetPasswordPage.swift */; };
 		0579B7882BEFCB8B0015D3C9 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579B7872BEFCB8B0015D3C9 /* DashboardView.swift */; };
 		0579B78C2BEFD5E90015D3C9 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579B78B2BEFD5E90015D3C9 /* LogoutView.swift */; };
+		05BA38512C0DBC2000C818FE /* develop.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 05BA38502C0DBC2000C818FE /* develop.xcconfig */; };
 		05BB78E92C0074AB00083550 /* MyFarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78E82C0074AB00083550 /* MyFarmView.swift */; };
 		05BB78EB2C0074C600083550 /* FarmInputsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78EA2C0074C600083550 /* FarmInputsView.swift */; };
 		05BB78ED2C00751100083550 /* ProduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78EC2C00751100083550 /* ProduceView.swift */; };
@@ -47,6 +48,8 @@
 		0579B7852BEFC6D50015D3C9 /* ResetPasswordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPage.swift; sourceTree = "<group>"; };
 		0579B7872BEFCB8B0015D3C9 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		0579B78B2BEFD5E90015D3C9 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
+		05BA384F2C0DB4B500C818FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		05BA38502C0DBC2000C818FE /* develop.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = develop.xcconfig; sourceTree = "<group>"; };
 		05BB78E82C0074AB00083550 /* MyFarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFarmView.swift; sourceTree = "<group>"; };
 		05BB78EA2C0074C600083550 /* FarmInputsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmInputsView.swift; sourceTree = "<group>"; };
 		05BB78EC2C00751100083550 /* ProduceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProduceView.swift; sourceTree = "<group>"; };
@@ -131,12 +134,14 @@
 		054CA4732BEFB9F200F9BF0B /* Equifarm */ = {
 			isa = PBXGroup;
 			children = (
+				05BA384F2C0DB4B500C818FE /* Info.plist */,
 				054CA4782BEFB9F300F9BF0B /* Assets.xcassets */,
 				050C423B2C006ED90026ADCE /* App Module */,
 				050C423A2C006E630026ADCE /* Managers */,
 				050C42392C006DD80026ADCE /* Screens */,
 				053A31A12C070CF1005238F0 /* Models */,
 				054CA47A2BEFB9F300F9BF0B /* Preview Content */,
+				05BA38502C0DBC2000C818FE /* develop.xcconfig */,
 			);
 			path = Equifarm;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				054CA47C2BEFB9F300F9BF0B /* Preview Assets.xcassets in Resources */,
+				05BA38512C0DBC2000C818FE /* develop.xcconfig in Resources */,
 				054CA4792BEFB9F300F9BF0B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +399,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Equifarm/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Equifarm/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show your farm on the map.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -422,6 +429,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Equifarm/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Equifarm/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show your farm on the map.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

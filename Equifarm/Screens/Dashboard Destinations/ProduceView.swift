@@ -10,53 +10,54 @@ import SwiftUI
 
 struct ProduceView: View {
     var body: some View {
-        NavigationView {
-            VStack {
-                // Tabs
-                HStack {
-                    Button(action: {
-                        // Action for Machineries tab
-                    }) {
-                        Text("Upload Produce")
-                            .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    }
-                   
-                    Spacer()
-                   
-                    Button(action: {
-                        // Action for Tools tab
-                    }) {
-                        Text("Manage Produce")
-                            .padding()
-                            .background(Color.pink)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    }
-                }
-                .padding(.horizontal)
-               
-                // Grid of items
-                ScrollView {
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-                        ForEach(0..<6) { index in
-                           ProducesView()
+        
+                     ScrollView {
+                VStack {
+                    // Tabs
+                    HStack {
+                        Button(action: {
+                            // Action for Machineries tab
+                        }) {
+                            Text("Upload Produce")
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(8)
+                        }
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            // Action for Tools tab
+                        }) {
+                            Text("Manage Produce")
+                                .padding()
+                                .background(Color.pink)
+                                .foregroundColor(.white)
+                                .cornerRadius(8)
                         }
                     }
-                    .padding()
-                }
+                    .padding(.horizontal)
+                    
+                    // Grid of items
+                 
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+                            ForEach(0..<6) { index in
+                                ProducesView()
+                            }
+                        }
+                        .padding()
+                                    }
             }
             .navigationTitle("My Produce")
             .background(Color.mint)
         }
         
     }
-}
 
 struct ProducesView: View {
     var body: some View {
+        
         VStack {
             Image(systemName: "photo") // Placeholder for tractor image
                 .resizable()
@@ -108,6 +109,6 @@ struct ProducesView: View {
 
 struct ProduceView_Previews: PreviewProvider {
     static var previews: some View {
-        ProduceView()
+        NavigationView { ProduceView()}
     }
 }
