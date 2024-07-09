@@ -2,6 +2,7 @@ import SwiftUI
 
 struct DashboardView: View {
     var body: some View {
+        
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: Array(repeating: GridItem(), count: 3), spacing: 20) {

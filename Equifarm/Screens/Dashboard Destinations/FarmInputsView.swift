@@ -108,6 +108,6 @@ struct BuyItemView: View {
 
 struct FarmInputsView_Previews: PreviewProvider {
     static var previews: some View {
-        FarmInputsView()
+        NavigationView { FarmInputsView()}
     }
 }

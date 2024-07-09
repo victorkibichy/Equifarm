@@ -1,0 +1,11 @@
+//
+//  develop.xcconfig
+//  Equifarm
+//
+//  Created by  Bouncy Baby on 6/3/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+base_url = http:/$()/52.15.152.26:8082/api/v1
+

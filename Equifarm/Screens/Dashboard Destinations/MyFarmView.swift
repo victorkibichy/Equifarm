@@ -81,6 +81,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
 struct MyFarmView_Previews: PreviewProvider {
     static var previews: some View {
-        MyFarmView()
+        NavigationView { MyFarmView()}
     }
 }

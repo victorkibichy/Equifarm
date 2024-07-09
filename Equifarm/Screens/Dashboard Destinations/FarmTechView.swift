@@ -115,6 +115,6 @@ struct SellItemView: View {
 
 struct FarmTechView_Previews: PreviewProvider {
     static var previews: some View {
-        FarmTechView()
+        NavigationView { FarmTechView()}
     }
 }
