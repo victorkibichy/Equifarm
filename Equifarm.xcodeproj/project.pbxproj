@@ -109,7 +109,6 @@
 		053A31A12C070CF1005238F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				053A31A22C070D3A005238F0 /* FarmerViewModel.swift */,
 				053A31A42C072A60005238F0 /* Farmer.swift */,
 			);
 			path = Models;
@@ -134,6 +133,7 @@
 		054CA4732BEFB9F200F9BF0B /* Equifarm */ = {
 			isa = PBXGroup;
 			children = (
+				05EB45AC2C3D754700F4DF29 /* ViewModels */,
 				05BA384F2C0DB4B500C818FE /* Info.plist */,
 				054CA4782BEFB9F300F9BF0B /* Assets.xcassets */,
 				050C423B2C006ED90026ADCE /* App Module */,
@@ -175,6 +175,14 @@
 				05BB78FC2C008F5D00083550 /* MapView.swift */,
 			);
 			path = Mapping;
+			sourceTree = "<group>";
+		};
+		05EB45AC2C3D754700F4DF29 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				053A31A22C070D3A005238F0 /* FarmerViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +405,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Equifarm/Preview Content\"";
+				DEVELOPMENT_TEAM = TN8F86PNVM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Equifarm/Info.plist;
@@ -427,6 +436,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Equifarm/Preview Content\"";
+				DEVELOPMENT_TEAM = TN8F86PNVM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Equifarm/Info.plist;

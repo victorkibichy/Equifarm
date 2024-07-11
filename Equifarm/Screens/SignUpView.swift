@@ -14,7 +14,6 @@ struct SignUpView: View {
     var body: some View {
         ScrollView {
             VStack {
-                // Image at the top
                 Image("splashscreen")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -54,6 +53,7 @@ struct SignUpView: View {
                         case .success(let response):
                             print("Sign Up successful: \(response)")
                             // Handle successful sign-up (e.g., navigate to a different view)
+                            
                         case .failure(let error):
                             print("Sign Up failed: \(error.localizedDescription)")
                             // Handle error (e.g., show an alert)
