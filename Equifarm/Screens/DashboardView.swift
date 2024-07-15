@@ -21,6 +21,9 @@ struct DashboardView: View {
                         }
                         else if title == "Farm inputs" {
                             CardView(title: title, imageName: imageName, destination: FarmInputsView())
+                    }
+                        else if title == "Services" {
+                            CardView(title: title, imageName: imageName, destination: ServicesView())
                     }else {
                             CardView(title: title, imageName: imageName, destination: Text("\(title) View"))
                         }
