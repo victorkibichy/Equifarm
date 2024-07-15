@@ -8,7 +8,7 @@ struct LoginView: View {
     @State private var isDashboardScreenPresented = false // State to control the presentation of the DashboardScreen
     
     var body: some View {
-        NavigationView { // Wrap the VStack in a NavigationView
+        TabView { // Wrap the VStack in a NavigationView
             VStack {
                 Image("splashscreen")
                     .resizable()

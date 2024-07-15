@@ -41,11 +41,7 @@ struct ServicesView: View {
     }
 }
 
-struct Service: Identifiable {
-    let id = UUID()
-    let name: String
-    let imageName: String
-}
+
 
 struct ServiceDetailView: View {
     let service: Service

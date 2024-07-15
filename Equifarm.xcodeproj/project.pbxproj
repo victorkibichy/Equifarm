@@ -31,6 +31,7 @@
 		05BB78F82C00803000083550 /* TransportationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78F72C00803000083550 /* TransportationView.swift */; };
 		05BB78FA2C008DFB00083550 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78F92C008DFB00083550 /* LocationManager.swift */; };
 		05BB78FD2C008F5D00083550 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78FC2C008F5D00083550 /* MapView.swift */; };
+		05C875E02C45081D0032773D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C875DF2C45081D0032773D /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		05BB78F72C00803000083550 /* TransportationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportationView.swift; sourceTree = "<group>"; };
 		05BB78F92C008DFB00083550 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		05BB78FC2C008F5D00083550 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		05C875DF2C45081D0032773D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				053A31A42C072A60005238F0 /* Farmer.swift */,
+				05C875DF2C45081D0032773D /* Service.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				0579B7862BEFC6D50015D3C9 /* ResetPasswordPage.swift in Sources */,
 				05BB78FD2C008F5D00083550 /* MapView.swift in Sources */,
 				0579B7822BEFC3DD0015D3C9 /* LoginView.swift in Sources */,
+				05C875E02C45081D0032773D /* Service.swift in Sources */,
 				05BB78EB2C0074C600083550 /* FarmInputsView.swift in Sources */,
 				054CA4752BEFB9F200F9BF0B /* EquifarmApp.swift in Sources */,
 			);
