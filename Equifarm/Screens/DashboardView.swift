@@ -77,7 +77,7 @@ struct DrawerMenuButton: View {
         NavigationLink(destination: DrawerMenuView()) {
             Image(systemName: "line.horizontal.3")
                 .font(.title)
-                .foregroundColor(.black)
+                .foregroundColor(.blue)
                 .padding()
         }
     }
