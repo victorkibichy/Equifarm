@@ -10,13 +10,11 @@ import SwiftUI
 
 struct ProduceView: View {
     var body: some View {
-        
-                     ScrollView {
+                    ScrollView {
                 VStack {
-                    // Tabs
                     HStack {
                         Button(action: {
-                            // Action for Machineries tab
+                            // Action for Upload tab
                         }) {
                             Text("Upload Produce")
                                 .padding()
@@ -38,9 +36,7 @@ struct ProduceView: View {
                         }
                     }
                     .padding(.horizontal)
-                    
-                    // Grid of items
-                 
+                                     
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
                             ForEach(0..<6) { index in
                                 ProducesView()

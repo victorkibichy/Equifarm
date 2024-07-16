@@ -11,49 +11,46 @@ import SwiftUI
 
 struct FarmInputsView: View {
     var body: some View {
-        NavigationView {
-            VStack {
-                // Tabs
-                HStack {
-                    Button(action: {
-                        // Action for Machineries tab
-                    }) {
-                        Text("Machineries")
-                            .padding()
-                            .background(Color.red)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    }
-                   
-                    Spacer()
-                   
-                    Button(action: {
-                        // Action for Tools tab
-                    }) {
-                        Text("Tools")
-                            .padding()
-                            .background(Color.gray)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    }
-                }
-                .padding(.horizontal)
-               
-                // Grid of items
-                ScrollView {
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-                        ForEach(0..<6) { index in
-                            BuyItemView()
+                    ScrollView {
+                VStack {
+                    HStack {
+                        Button(action: {
+                            // Action for Upload tab
+                        }) {
+                            Text("Farm Chemicals")
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(8)
+                        }
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            // Action for Tools tab
+                        }) {
+                            Text("Farm Inputs")
+                                .padding()
+                                .background(Color.pink)
+                                .foregroundColor(.white)
+                                .cornerRadius(8)
                         }
                     }
-                    .padding()
-                }
+                    .padding(.horizontal)
+                                     
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+                            ForEach(0..<6) { index in
+                                BuyItemView()
+                            }
+                        }
+                        .padding()
+                                    }
             }
             .navigationTitle("Farm Inputs")
             .background(Color.mint)
         }
+        
     }
-}
 
 struct BuyItemView: View {
     var body: some View {
