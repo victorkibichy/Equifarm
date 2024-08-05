@@ -8,13 +8,11 @@ class NetworkManager {
 
 extension NetworkManager {
     func signUp(firstName: String, lastName: String, nationalID: String, email: String, phoneNumber: String, password: String, role: String, completion: @escaping (Result<String, Error>) -> Void) {
-        // Ensure the URL is valid
-        guard let url = URL(string: "http://52.15.152.26:8082/api/v1/") else {  // Assuming the endpoint is /signup
+        guard let url = URL(string: "http://52.15.152.26:8082/api/v1/") else {  
             completion(.failure(NSError(domain: "Invalid URL", code: 1001, userInfo: nil)))
             return
         }
         
-        // Create a URL request and set its method to POST
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
