@@ -27,6 +27,9 @@ struct DashboardView: View {
                     }
                         else if title == "Training" {
                             CardView(title: title, imageName: imageName, destination: TrainingView())
+                    }
+                        else if title == "Support" {
+                            CardView(title: title, imageName: imageName, destination: SupportView())
                     }else {
                             CardView(title: title, imageName: imageName, destination: Text("\(title) View"))
                         }

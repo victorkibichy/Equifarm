@@ -21,6 +21,8 @@
 		0579B7882BEFCB8B0015D3C9 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579B7872BEFCB8B0015D3C9 /* DashboardView.swift */; };
 		0579B78C2BEFD5E90015D3C9 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579B78B2BEFD5E90015D3C9 /* LogoutView.swift */; };
 		059395002C46641B002211C4 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 059394FF2C46641B002211C4 /* OpenAISwift */; };
+		059A3E942C6213A00096DB64 /* OpenAIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A3E932C6213A00096DB64 /* OpenAIManager.swift */; };
+		059A3E962C621ADC0096DB64 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A3E952C621ADC0096DB64 /* ChatMessage.swift */; };
 		05BA38512C0DBC2000C818FE /* develop.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 05BA38502C0DBC2000C818FE /* develop.xcconfig */; };
 		05BB78E92C0074AB00083550 /* MyFarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78E82C0074AB00083550 /* MyFarmView.swift */; };
 		05BB78EB2C0074C600083550 /* FarmInputsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78EA2C0074C600083550 /* FarmInputsView.swift */; };
@@ -50,6 +52,8 @@
 		0579B7852BEFC6D50015D3C9 /* ResetPasswordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPage.swift; sourceTree = "<group>"; };
 		0579B7872BEFCB8B0015D3C9 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		0579B78B2BEFD5E90015D3C9 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
+		059A3E932C6213A00096DB64 /* OpenAIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIManager.swift; sourceTree = "<group>"; };
+		059A3E952C621ADC0096DB64 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		05BA384F2C0DB4B500C818FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		05BA38502C0DBC2000C818FE /* develop.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = develop.xcconfig; sourceTree = "<group>"; };
 		05BB78E82C0074AB00083550 /* MyFarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFarmView.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 			children = (
 				052B09052BF788D400DE6B28 /* NetworkManager.swift */,
 				05BB78F92C008DFB00083550 /* LocationManager.swift */,
+				059A3E932C6213A00096DB64 /* OpenAIManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			children = (
 				053A31A42C072A60005238F0 /* Farmer.swift */,
 				05C875DF2C45081D0032773D /* Service.swift */,
+				059A3E952C621ADC0096DB64 /* ChatMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 				05BB78F32C007A5A00083550 /* ServicesView.swift in Sources */,
 				05BB78E92C0074AB00083550 /* MyFarmView.swift in Sources */,
 				05BB78FA2C008DFB00083550 /* LocationManager.swift in Sources */,
+				059A3E962C621ADC0096DB64 /* ChatMessage.swift in Sources */,
 				05BB78EF2C007A2300083550 /* SupportView.swift in Sources */,
 				053A31A52C072A60005238F0 /* Farmer.swift in Sources */,
 				0579B7842BEFC4EF0015D3C9 /* SignUpView.swift in Sources */,
@@ -284,6 +291,7 @@
 				053A31A32C070D3A005238F0 /* FarmerViewModel.swift in Sources */,
 				0579B7882BEFCB8B0015D3C9 /* DashboardView.swift in Sources */,
 				0579B7862BEFC6D50015D3C9 /* ResetPasswordPage.swift in Sources */,
+				059A3E942C6213A00096DB64 /* OpenAIManager.swift in Sources */,
 				05BB78FD2C008F5D00083550 /* MapView.swift in Sources */,
 				0579B7822BEFC3DD0015D3C9 /* LoginView.swift in Sources */,
 				05C875E02C45081D0032773D /* Service.swift in Sources */,

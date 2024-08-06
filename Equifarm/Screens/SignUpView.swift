@@ -72,7 +72,7 @@ struct SignUpView: View {
                 
                 Text("Please select Role") // Text view below Confirm Password field
                     .foregroundColor(.red) // Change color to red or any desired color
-                    .padding(.top, 8) // Add some top padding
+                    .padding(.top, 8) 
                 
                 Spacer() // Pushes everything up
             }
