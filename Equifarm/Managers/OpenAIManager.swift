@@ -5,6 +5,7 @@
 //  Created by  Bouncy Baby on 8/6/24.
 //
 
+// OpenAIManager.swift
 import Foundation
 
 class OpenAIManager: ObservableObject {
@@ -58,7 +59,10 @@ class OpenAIManager: ObservableObject {
             }
             
             do {
-                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
+                print("Response JSON: \(jsonResponse)") // Debugging line
+                
+                if let json = jsonResponse as? [String: Any],
                    let choices = json["choices"] as? [[String: Any]],
                    let text = choices.first?["text"] as? String {
                     DispatchQueue.main.async {

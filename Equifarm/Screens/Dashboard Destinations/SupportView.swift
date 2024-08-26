@@ -10,30 +10,17 @@ import SwiftUI
 struct SupportView: View {
     @StateObject private var openAIManager = OpenAIManager()
     @State private var userInput: String = ""
-
+    
     var body: some View {
         VStack {
             List(openAIManager.messages) { message in
-                HStack {
-                    if message.isUser {
-                        Spacer()
-                        Text(message.text)
-                            .padding()
-                            .background(Color.blue.opacity(0.2))
-                            .cornerRadius(10)
-                            .frame(maxWidth: 300, alignment: .trailing)
-                    } else {
-                        Text(message.text)
-                            .padding()
-                            .background(Color.gray.opacity(0.2))
-                            .cornerRadius(10)
-                            .frame(maxWidth: 300, alignment: .leading)
-                        Spacer()
-                    }
-                }
+                Text(message.text)
+                    .frame(maxWidth: .infinity, alignment: message.isUser ? .trailing : .leading)
+                    .padding()
+                    .background(message.isUser ? Color.blue : Color.gray.opacity(0.2))
+                    .cornerRadius(10)
             }
-            .listStyle(PlainListStyle())
-
+            
             HStack {
                 TextField("Type your message", text: $userInput)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -52,11 +39,10 @@ struct SupportView: View {
         }
         .navigationTitle("Support Chatbot")
     }
-
+    
     private func sendMessage() {
         guard !userInput.isEmpty else { return }
-        let userMessage = ChatMessage(id: UUID(), text: userInput, isUser: true)
-        openAIManager.messages.append(userMessage)
+        openAIManager.messages.append(ChatMessage(id: UUID(), text: "You: \(userInput)", isUser: true))
         openAIManager.sendMessage(prompt: userInput)
         userInput = ""
     }
