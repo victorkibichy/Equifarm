@@ -102,7 +102,7 @@
 		050C423A2C006E630026ADCE /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				052B09052BF788D400DE6B28 /* APIManager.swift */,
+				058A85072C7CB965000E10A8 /* APIManagers */,
 				05BB78F92C008DFB00083550 /* LocationManager.swift */,
 				059A3E932C6213A00096DB64 /* OpenAIManager.swift */,
 			);
@@ -166,6 +166,14 @@
 				054CA47B2BEFB9F300F9BF0B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		058A85072C7CB965000E10A8 /* APIManagers */ = {
+			isa = PBXGroup;
+			children = (
+				052B09052BF788D400DE6B28 /* APIManager.swift */,
+			);
+			path = APIManagers;
 			sourceTree = "<group>";
 		};
 		05BB78F42C007A9300083550 /* Dashboard Destinations */ = {

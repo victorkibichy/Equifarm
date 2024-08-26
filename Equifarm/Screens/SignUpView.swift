@@ -9,6 +9,8 @@ struct SignUpView: View {
     @State private var password: String = ""
     @State private var confirmPassword: String = ""
     @State private var selectedRoleIndex = 0
+    @State private var message: String = ""
+    @State private var showAlert = false
     let roles = ["Farmer", "Agrodealer", "Buyer", "Service Provider", "Transporter"]
     
     var body: some View {
@@ -47,19 +49,7 @@ struct SignUpView: View {
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
                 
-                Button(action: {
-                    NetworkManager.shared.signUp(firstName: firstName, lastName: lastName, nationalID: nationalID, email: email, phoneNumber: phoneNumber, password: password, role: roles[selectedRoleIndex]) { result in
-                        switch result {
-                        case .success(let response):
-                            print("Sign Up successful: \(response)")
-                            // Handle successful sign-up (e.g., navigate to a different view)
-                            
-                        case .failure(let error):
-                            print("Sign Up failed: \(error.localizedDescription)")
-                            // Handle error (e.g., show an alert)
-                        }
-                    }
-                }) {
+                Button(action: signUp) {
                     Text("Sign Up")
                         .font(.headline)
                         .foregroundColor(.white)
@@ -70,13 +60,44 @@ struct SignUpView: View {
                         .padding(.horizontal)
                 }
                 
-                Text("Please select Role") // Text view below Confirm Password field
-                    .foregroundColor(.red) // Change color to red or any desired color
-                    .padding(.top, 8) 
+                Text(message)
+                    .foregroundColor(.red)
+                    .padding()
                 
-                Spacer() // Pushes everything up
+                Spacer()
             }
             .padding()
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Sign Up Result"), message: Text(message), dismissButton: .default(Text("OK")))
+        }
+    }
+    
+    private func signUp() {
+        guard password == confirmPassword else {
+            message = "Passwords do not match."
+            showAlert = true
+            return
+        }
+        
+        NetworkManager.shared.signUp(
+            firstName: firstName,
+            lastName: lastName,
+            nationalID: nationalID,
+            email: email,
+            phoneNumber: phoneNumber,
+            password: password,
+            role: roles[selectedRoleIndex]
+        ) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let response):
+                    message = response
+                case .failure(let error):
+                    message = "Sign Up failed: \(error.localizedDescription)"
+                }
+                showAlert = true
+            }
         }
     }
 }
