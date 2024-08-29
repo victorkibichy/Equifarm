@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  SignUpView.swift
 //  Equifarm
 //
 //  Created by  Bouncy Baby on 5/11/24.

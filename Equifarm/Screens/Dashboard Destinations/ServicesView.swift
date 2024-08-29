@@ -58,7 +58,7 @@ struct ServiceDetailView: View {
                 .font(.largeTitle)
                 .padding()
             
-            Text("Detailed information about \(service.name). Here you can provide more details about the service, how to avail it, contact information, etc.")
+            Text("Detailed information about \(service.name) .")
                 .padding()
             
             Spacer()

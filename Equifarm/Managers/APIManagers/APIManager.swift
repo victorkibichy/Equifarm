@@ -1,3 +1,10 @@
+//
+//  NetworkManager.swift
+//  Equifarm
+//
+//  Created by  Bouncy Baby on 5/11/24.
+//
+
 import Foundation
 
 class NetworkManager {
@@ -55,15 +62,19 @@ class NetworkManager {
     }
     
     /// Authenticate function
-   public final func authenticate(emailOrNationalId: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
+
+
+
+    public final func authenticate(emailOrNationalId: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
         guard let url = URL(string: "\(baseURL)/authenticate") else {
-            completion(.failure(NSError(domain: "Invalid URL", code: 1001, userInfo: nil)))
+            completion(.failure(NetworkError.invalidURL))
             return
         }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.timeoutInterval = 30 // Optional: Set a timeout interval
         
         let body: [String: Any] = [
             "emailOrNationalId": emailOrNationalId,
@@ -78,37 +89,46 @@ class NetworkManager {
         }
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            
-            guard let data = data, let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
-                let errorResponse = String(data: data ?? Data(), encoding: .utf8) ?? "Unknown error"
-                completion(.failure(NSError(domain: errorResponse, code: 1004, userInfo: nil)))
-                return
-            }
-            
-            // If the response contains JSON data, parse it
-            do {
-                // Assuming the response contains a JSON object
-                if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    // Example: Handle the response JSON
-                    // You might want to extract tokens or other information here
-                    if let token = jsonResponse["token"] as? String {
-                        completion(.success(token)) // Assuming token is what you want to return
-                    } else {
-                        completion(.success("Login successful!"))
-                    }
-                } else {
-                    let responseString = String(data: data, encoding: .utf8) ?? "Success"
-                    completion(.success(responseString))
+            DispatchQueue.main.async {
+                if let error = error {
+                    completion(.failure(NetworkError.requestFailed(error.localizedDescription)))
+                    return
                 }
-            } catch {
-                completion(.failure(error))
+                
+                guard let data = data, let httpResponse = response as? HTTPURLResponse else {
+                    completion(.failure(NetworkError.unknownError))
+                    return
+                }
+                
+                switch httpResponse.statusCode {
+                case 200...299:
+                    do {
+                        if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                            if let token = jsonResponse["token"] as? String {
+                                // Save the token securely if needed
+                                completion(.success(token))
+                            } else {
+                                completion(.success("Login successful!"))
+                            }
+                        } else {
+                            let responseString = String(data: data, encoding: .utf8) ?? "Success"
+                            completion(.success(responseString))
+                        }
+                    } catch {
+                        completion(.failure(NetworkError.responseParsingFailed))
+                    }
+                case 401:
+                    completion(.failure(NetworkError.serverError("Unauthorized: Invalid credentials")))
+                case 500...599:
+                    completion(.failure(NetworkError.serverError("Server error: Please try again later")))
+                default:
+                    let errorResponse = String(data: data, encoding: .utf8) ?? "Unknown error"
+                    completion(.failure(NetworkError.serverError(errorResponse)))
+                }
             }
         }
         
         task.resume()
     }
+
 }
