@@ -1,3 +1,10 @@
+//
+//  LoginView.swift
+//  Equifarm
+//
+//  Created by  Bouncy Baby on 5/11/24.
+//
+
 import SwiftUI
 
 struct LoginView: View {
@@ -6,9 +13,10 @@ struct LoginView: View {
     @State private var isSignUpViewPresented = false
     @State private var isResetPasswordPagePresented = false // State to control the presentation of the ResetPasswordPage
     @State private var isDashboardScreenPresented = false // State to control the presentation of the DashboardScreen
-    
+    @State private var loginErrorMessage: String? = nil // State to show login error messages
+
     var body: some View {
-        TabView { 
+        TabView {
             VStack {
                 Image("splashscreen")
                     .resizable()
@@ -32,14 +40,27 @@ struct LoginView: View {
                     .cornerRadius(8)
                     .padding(.horizontal)
                 
+                if let errorMessage = loginErrorMessage {
+                    Text(errorMessage)
+                        .foregroundColor(.red)
+                        .padding()
+                }
+                
                 Button(action: {
-                    // Handle login button action
-                    // Here you can perform validation and authentication
-                    print("Username: \(username)")
-                    print("Password: \(password)")
-                    
-                    // Set isDashboardScreenPresented to true to navigate to the DashboardScreen
-                    isDashboardScreenPresented = true
+                    // Call the authenticate function
+                    NetworkManager.shared.authenticate(emailOrNationalId: username, password: password) { result in
+                        DispatchQueue.main.async {
+                            switch result {
+                            case .success(let message):
+                                print(message) // Handle success message
+                                isDashboardScreenPresented = true
+                                
+                            case .failure(let error):
+                                loginErrorMessage = "Login failed: \(error.localizedDescription)"
+                                // Keep isDashboardScreenPresented as false to deny access
+                            }
+                        }
+                    }
                 }) {
                     Text("Login")
                         .font(.headline)

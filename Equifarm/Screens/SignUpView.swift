@@ -1,3 +1,10 @@
+//
+//  LoginView.swift
+//  Equifarm
+//
+//  Created by  Bouncy Baby on 5/11/24.
+//
+
 import SwiftUI
 
 struct SignUpView: View {
@@ -41,12 +48,16 @@ struct SignUpView: View {
                 .cornerRadius(8)
                 .padding(.horizontal)
                 
-                Picker("Select Role", selection: $selectedRoleIndex) {
-                    ForEach(0..<roles.count) { index in
-                        Text(roles[index]).tag(index)
+                HStack {
+                    ScrollView {
+                        Picker("Select Role", selection: $selectedRoleIndex) {
+                            ForEach(0..<roles.count) { index in
+                                Text(roles[index]).tag(index)
+                            }
+                        }
                     }
                 }
-                .pickerStyle(SegmentedPickerStyle())
+                .pickerStyle(.inline)
                 .padding()
                 
                 Button(action: signUp) {
