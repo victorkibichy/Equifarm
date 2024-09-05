@@ -15,7 +15,7 @@ class OpenAIManager: ObservableObject {
     @Published var isLoading: Bool = false
 
     func sendMessage(prompt: String) {
-        guard let url = URL(string: "https://api.openai.com/v1/engines/davinci-codex/completions") else {
+        guard let url = URL(string: "https://api.openai.com/v1/engines/gpt-3.5-turbo/completions") else {
             self.messages.append(ChatMessage(id: UUID(), text: "Invalid URL", isUser: false))
             return
         }
