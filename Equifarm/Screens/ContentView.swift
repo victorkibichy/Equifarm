@@ -39,7 +39,7 @@ struct ContentView: View {
         .fullScreenCover(isPresented: $isActiveAutoOpenPage) {
             AutoOpenPage()
         }
-    }
+    } 
 }
 
 struct ContentView_Previews: PreviewProvider {

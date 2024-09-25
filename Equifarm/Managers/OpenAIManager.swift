@@ -6,16 +6,17 @@
 //
 
 // OpenAIManager.swift
+
 import Foundation
 
 class OpenAIManager: ObservableObject {
-    private let apiKey: String = "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"
+    private let apiKey: String = "sk-your-api-key" // Store it securely in production
     
     @Published var messages: [ChatMessage] = []
     @Published var isLoading: Bool = false
 
     func sendMessage(prompt: String) {
-        guard let url = URL(string: "https://api.openai.com/v1/engines/gpt-3.5-turbo/completions") else {
+        guard let url = URL(string: "https://api.openai.com/v1/chat/completions") else {
             self.messages.append(ChatMessage(id: UUID(), text: "Invalid URL", isUser: false))
             return
         }
@@ -26,7 +27,11 @@ class OpenAIManager: ObservableObject {
         request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
         
         let body: [String: Any] = [
-            "prompt": prompt,
+            "model": "gpt-3.5-turbo", // Use the correct model name
+            "messages": [
+                ["role": "system", "content": "You are a helpful assistant."], // System role
+                ["role": "user", "content": prompt] // User's message
+            ],
             "max_tokens": 150
         ]
         
@@ -64,9 +69,10 @@ class OpenAIManager: ObservableObject {
                 
                 if let json = jsonResponse as? [String: Any],
                    let choices = json["choices"] as? [[String: Any]],
-                   let text = choices.first?["text"] as? String {
+                   let message = choices.first?["message"] as? [String: Any],
+                   let content = message["content"] as? String {
                     DispatchQueue.main.async {
-                        self.messages.append(ChatMessage(id: UUID(), text: text.trimmingCharacters(in: .whitespacesAndNewlines), isUser: false))
+                        self.messages.append(ChatMessage(id: UUID(), text: content.trimmingCharacters(in: .whitespacesAndNewlines), isUser: false))
                     }
                 } else {
                     DispatchQueue.main.async {
@@ -83,5 +89,3 @@ class OpenAIManager: ObservableObject {
         task.resume()
     }
 }
-
-

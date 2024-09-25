@@ -19,6 +19,7 @@ struct SupportView: View {
                     .padding()
                     .background(message.isUser ? Color.blue : Color.gray.opacity(0.2))
                     .cornerRadius(10)
+                    .scrollDisabled(false)
             }
             
             HStack {
@@ -38,6 +39,8 @@ struct SupportView: View {
             }
         }
         .navigationTitle("Support Chatbot")
+        .background(Color.mint.opacity(0.4))
+
     }
     
     private func sendMessage() {

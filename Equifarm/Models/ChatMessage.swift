@@ -12,3 +12,4 @@ struct ChatMessage: Identifiable {
     let text: String
     let isUser: Bool
 }
+ 

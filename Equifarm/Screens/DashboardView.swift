@@ -31,7 +31,7 @@ struct DashboardView: View {
                         else if title == "Support" {
                             CardView(title: title, imageName: imageName, destination: SupportView())
                     }else {
-                            CardView(title: title, imageName: imageName, destination: Text("\(title) View"))
+                            CardView(title: title, imageName: imageName, destination: Text("\(title)View"))
                         }
                     }
                 }
