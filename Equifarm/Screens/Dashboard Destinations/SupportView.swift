@@ -6,49 +6,78 @@
 //
 
 import SwiftUI
+import GoogleGenerativeAI
 
 struct SupportView: View {
-    @StateObject private var openAIManager = OpenAIManager()
-    @State private var userInput: String = ""
+    
+    let model = GenerativeModel(name: "gemini-pro", apiKey: "AIzaSyCOgv6Jmw9u164msDI9VF8FuDXZ7LtSoE8")
+
+    @State private var textInput = ""
+    @State private var aiResponse = "Hello! How can I help you today ?"
+    
     
     var body: some View {
-        VStack {
-            List(openAIManager.messages) { message in
-                Text(message.text)
-                    .frame(maxWidth: .infinity, alignment: message.isUser ? .trailing : .leading)
-                    .padding()
-                    .background(message.isUser ? Color.blue : Color.gray.opacity(0.2))
-                    .cornerRadius(10)
-                    .scrollDisabled(false)
-            }
+        
             
-            HStack {
-                TextField("Type your message", text: $userInput)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+            VStack {
                 
-                if openAIManager.isLoading {
-                    ProgressView()
-                        .padding()
-                } else {
-                    Button(action: sendMessage) {
-                        Image(systemName: "paperplane.fill")
-                            .padding()
-                    }
+                // MARK: Animating Logo
+                Image("support")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200)
+                
+                ScrollView {
+                    Text(aiResponse)
+                        .font(.largeTitle)
+                        .multilineTextAlignment(.center)
+                    
                 }
+                
+                HStack {
+                    TextField("Enter A Mesasge To the Support Team", text: $textInput)
+                        .textFieldStyle(.roundedBorder)
+                        .foregroundStyle(.black)
+                    
+                    Button(action: sendMessage, label: {
+                        Image(systemName: "paperplane.fill")
+                    })
+                }
+                
             }
-        }
+            .foregroundStyle(.black)
+            .padding()
+            .background {
+                ZStack {
+                    Color.mint
+                }
+                .ignoresSafeArea()
+            }
+               
         .navigationTitle("Support Chatbot")
-        .background(Color.mint.opacity(0.4))
 
     }
     
-    private func sendMessage() {
-        guard !userInput.isEmpty else { return }
-        openAIManager.messages.append(ChatMessage(id: UUID(), text: "You: \(userInput)", isUser: true))
-        openAIManager.sendMessage(prompt: userInput)
-        userInput = ""
+    
+    //MARK: Fetch Response
+    func sendMessage() {
+        aiResponse = ""
+        Task {
+            do {
+                let response = try await model.generateContent(textInput)
+                guard let text = response.text else {
+                    textInput = "Sorry, I couldn't Processs that. \nPlease try Again Later"
+                    return
+                }
+                textInput = ""
+                aiResponse = text
+                
+            } catch {
+                aiResponse = "Something Went Wrong! \n\(error.localizedDescription)"
+            }
+        }
     }
+    
 }
 
 struct SupportView_Previews: PreviewProvider {

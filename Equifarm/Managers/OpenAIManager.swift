@@ -8,6 +8,8 @@
 // OpenAIManager.swift
 
 import Foundation
+import GoogleGenerativeAI
+
 
 class OpenAIManager: ObservableObject {
     private let apiKey: String = "sk-your-api-key" // Store it securely in production

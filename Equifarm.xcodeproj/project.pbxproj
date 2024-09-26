@@ -24,6 +24,9 @@
 		059395002C46641B002211C4 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 059394FF2C46641B002211C4 /* OpenAISwift */; };
 		059A3E942C6213A00096DB64 /* OpenAIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A3E932C6213A00096DB64 /* OpenAIManager.swift */; };
 		059A3E962C621ADC0096DB64 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A3E952C621ADC0096DB64 /* ChatMessage.swift */; };
+		05A181F32CA534F900C257D7 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 05A181F22CA534F900C257D7 /* GoogleGenerativeAI */; };
+		05A181F52CA540F800C257D7 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A181F42CA540F800C257D7 /* APIKey.swift */; };
+		05A181F72CA5433700C257D7 /* GenerativeAI-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05A181F62CA5433700C257D7 /* GenerativeAI-info.plist */; };
 		05BA38512C0DBC2000C818FE /* develop.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 05BA38502C0DBC2000C818FE /* develop.xcconfig */; };
 		05BB78E92C0074AB00083550 /* MyFarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78E82C0074AB00083550 /* MyFarmView.swift */; };
 		05BB78EB2C0074C600083550 /* FarmInputsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB78EA2C0074C600083550 /* FarmInputsView.swift */; };
@@ -57,6 +60,8 @@
 		058A85052C7CB8EB000E10A8 /* UserRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistration.swift; sourceTree = "<group>"; };
 		059A3E932C6213A00096DB64 /* OpenAIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIManager.swift; sourceTree = "<group>"; };
 		059A3E952C621ADC0096DB64 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		05A181F42CA540F800C257D7 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		05A181F62CA5433700C257D7 /* GenerativeAI-info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GenerativeAI-info.plist"; sourceTree = "<group>"; };
 		05BA384F2C0DB4B500C818FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		05BA38502C0DBC2000C818FE /* develop.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = develop.xcconfig; sourceTree = "<group>"; };
 		05BB78E82C0074AB00083550 /* MyFarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFarmView.swift; sourceTree = "<group>"; };
@@ -79,6 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				059395002C46641B002211C4 /* OpenAISwift in Frameworks */,
+				05A181F32CA534F900C257D7 /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +139,7 @@
 		054CA4682BEFB9F200F9BF0B = {
 			isa = PBXGroup;
 			children = (
+				05A181F62CA5433700C257D7 /* GenerativeAI-info.plist */,
 				054CA4732BEFB9F200F9BF0B /* Equifarm */,
 				054CA4722BEFB9F200F9BF0B /* Products */,
 			);
@@ -214,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				05F87F5C2C807C78003A6C70 /* NetworkErrors.swift */,
+				05A181F42CA540F800C257D7 /* APIKey.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -236,6 +244,7 @@
 			name = Equifarm;
 			packageProductDependencies = (
 				059394FF2C46641B002211C4 /* OpenAISwift */,
+				05A181F22CA534F900C257D7 /* GoogleGenerativeAI */,
 			);
 			productName = Equifarm;
 			productReference = 054CA4712BEFB9F200F9BF0B /* Equifarm.app */;
@@ -267,6 +276,7 @@
 			mainGroup = 054CA4682BEFB9F200F9BF0B;
 			packageReferences = (
 				059394FE2C46641B002211C4 /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+				05A181F12CA534F900C257D7 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
 			);
 			productRefGroup = 054CA4722BEFB9F200F9BF0B /* Products */;
 			projectDirPath = "";
@@ -284,6 +294,7 @@
 			files = (
 				054CA47C2BEFB9F300F9BF0B /* Preview Assets.xcassets in Resources */,
 				05BA38512C0DBC2000C818FE /* develop.xcconfig in Resources */,
+				05A181F72CA5433700C257D7 /* GenerativeAI-info.plist in Resources */,
 				054CA4792BEFB9F300F9BF0B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +313,7 @@
 				05BB78F62C00801400083550 /* TrainingView.swift in Sources */,
 				054CA4772BEFB9F200F9BF0B /* ContentView.swift in Sources */,
 				05BB78F32C007A5A00083550 /* ServicesView.swift in Sources */,
+				05A181F52CA540F800C257D7 /* APIKey.swift in Sources */,
 				05BB78E92C0074AB00083550 /* MyFarmView.swift in Sources */,
 				05BB78FA2C008DFB00083550 /* LocationManager.swift in Sources */,
 				059A3E962C621ADC0096DB64 /* ChatMessage.swift in Sources */,
@@ -535,6 +547,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		05A181F12CA534F900C257D7 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/generative-ai-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.6;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -542,6 +562,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 059394FE2C46641B002211C4 /* XCRemoteSwiftPackageReference "OpenAISwift" */;
 			productName = OpenAISwift;
+		};
+		05A181F22CA534F900C257D7 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05A181F12CA534F900C257D7 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
